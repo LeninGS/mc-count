@@ -12,6 +12,8 @@ function Horario(props) {
 }
 
 //NADA dentro do getStaticProps vai apra o frontend
+//IMPORTANTE para o CONGELAMENTO de informações antes de enviar para o frontend
+//VANTAGEM do banco de dados cair e o valor permanecer
 export function getStaticProps() {
     const staticDate = new Date();
     const staticDateString = staticDate.toGMTString();
@@ -19,7 +21,8 @@ export function getStaticProps() {
     return {
         props: {
             staticDateString
-        }
+        },
+        revalidate: 1
     }
 }
 
