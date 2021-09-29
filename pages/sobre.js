@@ -1,3 +1,4 @@
+//biblioteca de otimização no carregamento de páginas
 import Link from 'next/link';
 
 function Sobre() {
