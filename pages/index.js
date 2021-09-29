@@ -17,7 +17,7 @@ function Counter() {
     return (
         <div>
             <p>
-                Você clicou {count} times.
+                Você clicou {count} vezes.
             </p>
             <button onClick={adicionarContador}>
                 Clique aqui
