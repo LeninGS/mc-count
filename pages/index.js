@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Home() {
-    return <div><h1> Home 2 </h1>
+    return <div><h1>Olá, mundo!</h1>
         <Counter />
     </div>;
 }
@@ -16,9 +16,12 @@ function Counter() {
 
     return (
         <div>
-            <p> You clicked {count}
-                times </p><button onClick={adicionarContador}>
-                Click me </button>
+            <p>
+                Você clicou {count} times.
+            </p>
+            <button onClick={adicionarContador}>
+                Clique aqui
+            </button>
         </div>
     );
 }
