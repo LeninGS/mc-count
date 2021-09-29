@@ -4,3 +4,5 @@ function Sobre() {
         <h2><a href="/index">Acessar a Home</a></h2>
     </div>)
 }
+
+export default Sobre;
