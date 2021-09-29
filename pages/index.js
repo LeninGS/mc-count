@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
 function Home() {
-    return <div > < h1 > Home 2 < /h1> <
-    Counter / >
-        <
-        /div >;
+    return <div><h1> Home 2 </h1>
+        <Counter />
+    </div>;
 }
 
 function Counter() {
@@ -12,18 +11,15 @@ function Counter() {
     const [count, setCount] = useState(1);
 
     function adicionarContador() {
-        setCount(count + 1)
+        setCount(count + 1);
     }
 
-    return ( <
-        div >
-        <
-        p > You clicked { count }
-        times < /p> <
-        button onClick = { adicionarContador } >
-        Click me <
-        /button> < /
-        div >
+    return (
+        <div>
+            <p> You clicked {count}
+                times </p><button onClick={adicionarContador}>
+                Click me </button>
+        </div>
     );
 }
 
