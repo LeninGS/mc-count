@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Home() {
     return (<div>
         <h1>Olá, mundo!</h1>
+        <h2><a href="/sobre">Acessar Sobre</a></h2>
 
         <Counter />
     </div>);
