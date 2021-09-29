@@ -1,19 +1,9 @@
 function Home2() {
-    <html>
-        <head>
-
-        </head>
-        <body>
-            <div>
-                <h1>
-                    Página Inicial.
-                </h1>
-            </div>
-        </body>
-        <script>
-
-        </script>
-    </html>
+    <div>
+        <h1>
+            Página Inicial.
+        </h1>
+    </div>
 }
 
 export default Home2;
