@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 function Home() {
     return (<div>
         <h1>Olá, mundo!</h1>
-        <h2><a href="/sobre">Acessar Sobre</a></h2>
+        <h2>
+            <Link href="/sobre">
+                <a>Acessar Sobre</a>
+            </Link>
+        </h2>
 
         <Counter />
     </div>);
