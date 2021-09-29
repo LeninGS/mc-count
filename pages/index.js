@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
 function Home() {
-    return <div><h1>Olá, mundo!</h1>
+    return (<div>
+        <h1>Olá, mundo!</h1>
+
         <Counter />
-    </div>;
+    </div>);
 }
 
 function Counter() {
