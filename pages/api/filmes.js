@@ -11,11 +11,12 @@ async function Filme(request, response) {
     const movieResponseJson = await movieResponse.json();
     const movieTitle = movieResponseJson.title;
     const movieGenre = "no genre info available";
-    try {
-        const movieGenre = movieResponseJson.genres[0].name;
-    } finally {
 
-    };
+    try {
+        movieGenre = movieResponseJson.genres[0].name;
+    } catch (error) {
+        movieGenre = "no genre info available";
+    }
 
     const movieRuntime = movieResponseJson.runtime;
     const movieOverview = movieResponseJson.overview;

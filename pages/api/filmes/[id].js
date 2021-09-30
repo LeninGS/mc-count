@@ -6,12 +6,13 @@ export default async function GetFilmeInfos(request, response) {
     const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiToken}`);
     const movieResponseJson = await movieResponse.json();
     const movieTitle = movieResponseJson.title;
-    const movieGenre = "";
+    const movieGenre = "no genre info available";
+
     try {
-        const movieGenre = movieResponseJson.genres[0].name;
-    } finally {
-        const movieGenre = "no genre info available";
-    };
+        movieGenre = movieResponseJson.genres[0].name;
+    } catch (error) {
+        movieGenre = "no genre info available";
+    }
 
     const movieRuntime = movieResponseJson.runtime;
     const movieOverview = movieResponseJson.overview;

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
 export async function getStaticPaths() {
     return {
@@ -11,7 +12,7 @@ export async function getStaticPaths() {
                 id: '2'
             }
         }],
-        fallback: true
+        fallback: false
     }
 }
 
@@ -35,51 +36,34 @@ export async function getStaticProps(context) {
 //     }
 // }
 
-function Filmes(props) {
+export default function Filmes(props) {
     return (
-        <div class="center">
-            <div>
-                <h3>Id do filme: {props.id}</h3>
-            </div>
-            <div>
-                <div class="titulo">Título do Filme</div>
-                <div class="subtitulo">Gênero | Duração</div>
-            </div>
-            <div class="center">
-                <img src="/anvil.png" class="center"></img>
-            </div>
-            <div class="wrapper">
-                <div>
-                    <p class="sinopse">
-                        Sinopse
-                    </p>
-                    <p class="sinopse-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at leo ac mi porttitor vestibulum eu a augue. In purus ipsum, dapibus nec justo a, commodo lacinia leo. Mauris mollis libero et iaculis mattis. Suspendisse non lacus ipsum. Vivamus non lobortis nisi. Pellentesque at vehicula nisl. Aenean placerat viverra tristique.
-                    </p>
+        <body>
+            <div class="hero">
+                <div class="navbar">
+                    <img src="/Set_your_amount.gif" class="logo" name="logo"></img>
+                    <Link href="/">
+                        <button type="button" class="button" name="home">Home</button>
+                    </Link>
+                    <button type="button" class="button" name="about">Sobre</button>
+                </div>
+                <div class="content">
+                    <small>Bem-vindo(a) ao</small>
+                    <h1>Mine Count</h1>
+                    <div class="pickaxe">
+                        <img src="/golden_pickaxe.png"></img>
+                    </div>
+                </div>
+                <div class="side-bar">
+                    <div class="menu-items">
+                        <img src="/chest.gif"></img>
+                        <img src="/diamond.png" ></img>
+                        <img src="/gold_ingot.png"></img>
+                        <img src="/iron_ingot.png"></img>
+                    </div>
+
                 </div>
             </div>
-        </div>
+        </body>
     )
-    // return (
-
-    //     <div>
-    //         <div class="container">
-    //             <div class="item"><img src="/anvil.png" alt="anvil_image_png"></img></div>
-    //             <div class="item-center"><img src="/barrel.png"></img></div>
-    //             <div class="item"><img src="/beacon.png"></img></div>
-    //         </div>
-    //         <div class="container-grid">
-    //             <div class="item-grid">abc</div>
-    //             <div class="item-grid">abc</div>
-    //             <div class="item-grid">abc</div>
-    //             <div class="item-grid">abc</div>
-    //             <div class="item-grid">abc</div>
-    //             <div class="item-grid">abc</div>
-    //             <div class="item-grid">abc</div>
-    //             ...
-    //         </div>
-    //     </div>
-    // )
-}
-
-export default Filmes;
+};
