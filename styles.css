@@ -1,0 +1,89 @@
+html, body{
+    height: 100%;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 5px solid black;
+    padding: 10px;
+    text-align: center;
+    }
+
+.container {
+    display: flex;
+    max-width: 1000px;
+  }
+  
+  .item {
+    height: 200px;
+    width: 100px; /* A fixed width as the default */
+  }
+  
+  .item-center { 
+    flex-grow: 3; /* Set the middle element to grow and stretch */
+    text-align: center;
+  }
+  
+  .item + .item { 
+    margin-left: 2%; 
+  }
+
+  .container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+  }
+  
+  .item-grid {
+    text-align: center;
+    width: 32%;
+    padding-bottom: 18%; /* 32:18, i.e. 16:9 */
+    margin-bottom: 2%; /* (100-32*3)/2 */
+  }
+
+  .imagem {
+    background-color: gray;
+    max-width: 200px;
+    border-radius: 20%;
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+
+  .titulo{
+      font-size: 30px;
+  }
+
+  .subtitulo{
+      font-size: 18px;
+      margin-bottom: 3%;
+  }
+
+  .sinopse{
+    font-size: 24px;
+  }
+
+  .sinopse-text{
+    font-size: 18px;
+  }
+
+  .page{
+      max-width: 700px;
+  }
+
+  .parent {
+        background: #CCCCCC;
+        height: 200px;
+        width: 200px;
+        position: relative;
+    }
+    .child {
+        background: #FFFF00;
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -35px 0 0 -35px;
+    }

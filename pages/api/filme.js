@@ -1,4 +1,4 @@
-async function filme(request, response) {
+async function Filme(request, response) {
     const apiToken = process.env.THE_MOVIE_DB_API_TOKEN;
     const dynamicDate = new Date();
 
@@ -15,4 +15,4 @@ async function filme(request, response) {
     });
 }
 
-export default filme;
+export default Filme;
