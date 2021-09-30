@@ -48,9 +48,16 @@ export default function Home() {
                 <div class="content">
                     <small>Bem-vindo(a) ao</small>
                     <h1>Mine Count</h1>
-                    <div class="pickaxe">
-                        <img src="/golden_pickaxe.png"></img>
+                    <div class="mining">
+                        <span class="cobblestone">
+                            <img src="/cobblestone.png"></img>
+                        </span>
+                        <span class="pickaxe">
+                            <img src="/golden_pickaxe.png"></img>
+                        </span>
                     </div>
+
+
                 </div>
                 <div class="side-bar">
                     <div class="menu-items">
@@ -62,6 +69,6 @@ export default function Home() {
 
                 </div>
             </div>
-        </body>
+        </body >
     )
 };

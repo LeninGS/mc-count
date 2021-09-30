@@ -18,9 +18,14 @@
   height: 50px;
 }
 
-.logo{
+.logo, .logo:hover {
   width: 60px;
   cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .navbar{
@@ -32,7 +37,7 @@
   justify-content: space-around;
 }
 
-.button{
+.button, .button:hover {
   color: bisque;
   padding: 10px 25px;
   background: transparent;
@@ -40,6 +45,14 @@
   border-radius: 20px;
   outline: none;
   cursor: pointer;
+}
+
+.button:hover {
+  background: white;
+  color: #0d0d0c;
+  border: 3px solid #0d0d0c;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
 }
 
 .content{
@@ -105,9 +118,36 @@ h1{
 }
 
 @keyframes tik {
-  10% {
+  25% {
     transform:rotate(45deg);
+    transform-origin: 70% 50%;
   }
+}
+
+@keyframes cob-wiggle {
+  0% { transform: rotate(0deg); }
+  80% { transform: rotate(0deg); }
+  85% { transform: rotate(-5deg); }
+  95% { transform: rotate(0deg); }
+ 100% { transform: rotate(0deg); }
+}
+
+.cobblestone img{
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+
+  offset: -10px 10px;
+  
+  animation: cob-wiggle 2s ease-in-out infinite;
+  animation-delay: -1150ms;
+}
+
+.mining{
+  display: flex;
+  position: relative;
 }
 
 
