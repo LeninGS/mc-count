@@ -13,15 +13,15 @@ async function Filme(request, response) {
     const movieGenre = "no genre info available";
     try {
         const movieGenre = movieResponseJson.genres[0].name;
-    } catch (error) {
+    } finally {
 
-    }
+    };
 
     const movieRuntime = movieResponseJson.runtime;
     const movieOverview = movieResponseJson.overview;
 
 
-    response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
+    response.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
 
     response.json({
         date: dynamicDate.toGMTString(),
