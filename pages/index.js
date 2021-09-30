@@ -43,11 +43,12 @@ export default function Home() {
                     <Link href="/">
                         <button type="button" class="button" name="home">Home</button>
                     </Link>
-                    <button type="button" class="button" name="about">Sobre</button>
+                    <button type="button" class="button" name="about">About</button>
                 </div>
                 <div class="content">
-                    <small>Bem-vindo(a) ao</small>
+                    <small>Welcome to</small>
                     <h1>Mine Count</h1>
+                    <h3>Coming soon</h3>
                     <div class="mining">
                         <span class="cobblestone">
                             <img src="/cobblestone.png"></img>
