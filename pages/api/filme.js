@@ -7,7 +7,7 @@ async function filme(request, response) {
     const movieResponseJson = await movieResponse.json();
     const movieOverview = movieResponseJson.overview;
 
-    response.setHeader('Cache-Control', 's-maxage=10, stale-while-reavalidate');
+    response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
 
     response.json({
         date: dynamicDate.toGMTString(),
