@@ -35,7 +35,7 @@ function Counter() {
 }
 
 export default function Home() {
-    const [pickaxe, setPickaxe] = useState("/golden_pickaxe.png");
+    const [pickaxe, setPickaxe] = useState("/wooden_pickaxe.png");
 
     return (
         <body>
