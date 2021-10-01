@@ -35,6 +35,8 @@ function Counter() {
 }
 
 export default function Home() {
+    const [pickaxe, setPickaxe] = useState("/golden_pickaxe.png");
+
     return (
         <body>
             <div class="hero">
@@ -54,20 +56,17 @@ export default function Home() {
                             <img src="/cobblestone.png"></img>
                         </span>
                         <span class="pickaxe">
-                            <img src="/golden_pickaxe.png"></img>
+                            <img id="pickaxe" src={pickaxe}></img>
                         </span>
                     </div>
-
-
                 </div>
                 <div class="side-bar">
                     <div class="menu-items">
                         <img src="/chest.gif"></img>
-                        <img src="/diamond.png" ></img>
-                        <img src="/gold_ingot.png"></img>
-                        <img src="/iron_ingot.png"></img>
+                        <img src="/diamond.png" onClick={() => setPickaxe("diamond_pickaxe.png")}></img>
+                        <img src="/gold_ingot.png" onClick={() => setPickaxe("/golden_pickaxe.png")}></img>
+                        <img src="/iron_ingot.png" onClick={() => setPickaxe("/iron_pickaxe.png")}></img>
                     </div>
-
                 </div>
             </div>
         </body >
