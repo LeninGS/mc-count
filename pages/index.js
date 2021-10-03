@@ -37,6 +37,7 @@ function Counter() {
 
 export default function Home(props) {
     const [pickaxe, setPickaxe] = useState("/wooden_pickaxe.png");
+    const [blockMining, setBlockMining] = useState("/cobblestone.png");
 
     const [clickCount, setClickCount] = useState(0);
 
@@ -67,22 +68,24 @@ export default function Home(props) {
                         </Link>
                         <button type="button" class="button" name="about">About</button>
                     </div>
-                    <div class="content">
-                        <small>Welcome to</small>
-                        <h1>Mine Count</h1>
-                        <span>
-                            <h3>Coming soon</h3>
-                        </span>
-                        <div class="mining">
-                            <span class="cobblestone">
-                                <img src="/cobblestone.png" onClick={() => setClickCount(clickCount + 1)}></img>
+                    <div class='wrapper'>
+                        <div class="content">
+                            <small>Welcome to</small>
+                            <h1>Mine Count</h1>
+                            <span>
+                                <h3>Coming soon</h3>
                             </span>
-                            <span class="pickaxe">
-                                <img id="pickaxe" src={pickaxe}></img>
-                            </span>
-                            <span class='text-clicking'>
-                                {showClickingText()}
-                            </span>
+                            <div class="mining">
+                                <span class="cobblestone">
+                                    <img src={blockMining} onClick={() => setClickCount(clickCount + 1)}></img>
+                                </span>
+                                <span class="pickaxe">
+                                    <img id="pickaxe" src={pickaxe}></img>
+                                </span>
+                                <span class='text-clicking'>
+                                    {showClickingText()}
+                                </span>
+                            </div>
                         </div>
                         <div class="samples">
                             <div>
@@ -98,14 +101,13 @@ export default function Home(props) {
                                 <div>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod massa ac arcu tempor vehicula. Donec efficitur pulvinar ipsum, ut auctor enim feugiat sit amet. Duis ut turpis at erat dignissim feugiat a eu ipsum. Nulla elementum, tellus et pretium egestas, risus est posuere enim, sit amet faucibus tellus augue eget risus.</div>
                             </div>
                         </div>
-
                     </div>
                     <div class="side-bar">
                         <div class="menu-items">
                             <img src="/chest.gif"></img>
-                            <img src="/diamond.png" onClick={() => setPickaxe("/diamond_pickaxe.png")}></img>
-                            <img src="/gold_ingot.png" onClick={() => setPickaxe("/golden_pickaxe.png")}></img>
-                            <img src="/iron_ingot.png" onClick={() => setPickaxe("/iron_pickaxe.png")}></img>
+                            <img src="/diamond.png" onClick={() => { setPickaxe("/diamond_pickaxe.png"); setBlockMining("/obsidian_block.png") }}></img>
+                            <img src="/gold_ingot.png" onClick={() => { setPickaxe("/golden_pickaxe.png"); setBlockMining("/lapis_lazuli_ore.png") }}></img>
+                            <img src="/iron_ingot.png" onClick={() => { setPickaxe("/iron_pickaxe.png"); setBlockMining("/redstone_ore.png") }}></img>
                         </div>
                     </div>
                 </div>

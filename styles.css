@@ -15,7 +15,7 @@ body{
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .nav-bar{
@@ -62,11 +62,12 @@ body{
 }
 
 .content{
+  display: flex;
+  flex-direction: column;
   color: #fbfcfd;
   position: absolute;
-  top: 50%;
-  left: 8%;
-  transform: translateY(-60%);
+  top: 20%;
+  left: 8%;  
   z-index: 0;
   width: 60%;
 }
@@ -112,7 +113,7 @@ h3::first-letter{
   width: 60px;
   height: 100vh;
   background: transparent;
-  position: absolute;
+  position: fixed;
   right: 10px;
   top: 0;
 }
@@ -176,6 +177,7 @@ h3::first-letter{
   left: 50px;
   width: 100px;
   height: 100px;
+  margin-bottom: 25px;
 
   offset: -10px 10px;
   
@@ -226,10 +228,19 @@ h3::first-letter{
   }
 }
 
-.samples {
-  display: flex; 
+.wrapper {
+  display: list-item;
+  grid-row: span;
+}
+
+.samples {  
+  display: flex;
+  position: absolute;
+  top: 70%;
+  right: 8%;
+  left: 10%; 
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly;  
 }
 
 .samples>div>div, .samples>div>div:hover {
