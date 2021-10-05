@@ -1,40 +1,45 @@
-async function Filme(request, response) {
+export default async function GetItemsInfos(request, response) {
+    const movieID = request.query.id;
     const apiToken = process.env.THE_MOVIE_DB_API_TOKEN;
     const dynamicDate = new Date();
+    const mineItems = await fetch(`https://minecraft-ids.grahamedgecombe.com/items.json`).json();
 
-    function getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    console.log(mineItems);
 
-    const movieID = getRndInteger(55555, 300000);
     const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiToken}`);
     const movieResponseJson = await movieResponse.json();
     const movieTitle = movieResponseJson.title;
     const movieGenre = "no genre info available";
 
     try {
-        const movieGenre = movieResponseJson.genres[0].name;
+        movieGenre = movieResponseJson.genres[0].name;
     } catch (error) {
-        const movieGenre = "no genre info available";
+        movieGenre = "no genre info available";
     }
 
     const movieRuntime = movieResponseJson.runtime;
     const movieOverview = movieResponseJson.overview;
-    const mineItems = fetch('https://minecraft-ids.grahamedgecombe.com/items.json')
-    const mineItemsJson = mineItems;
+
 
     response.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
 
     response.json({
-        items: mineItems,
         date: dynamicDate.toGMTString(),
         movieId: movieID,
         title: movieTitle,
         genre: movieGenre,
         runtime: movieRuntime,
         sinopse: movieOverview,
-        all: movieResponseJson
+        all: movieResponseJson,
+        items: mineItems
+    });
+
+    response.json({
+        date: dynamicDate.toGMTString(),
+        movieId: movieID,
+        title: movieTitle,
+        genre: movieGenre,
+        runtime: movieRuntime,
+        sinopse: movieOverview
     });
 }
-
-export default Filme;

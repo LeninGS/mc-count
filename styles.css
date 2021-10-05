@@ -39,9 +39,12 @@ body{
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
+  -webkit-tap-highlight-color: transparent;
+  gap:5%;
 }
+
 
 .button, .button:hover {
   color: bisque;
@@ -75,38 +78,18 @@ body{
 h1{
   font-size: 70px;
   margin: 10px 0 30px;
-  line-height: 80px;
+  line-height: 70px;
 }
 
 h3{
   font-size: 30px;
   font-style: italic;
   line-height: 20px;
+  opacity: 0.6;
 }
 
 h3::first-letter{
   font-size: 40px;
-  font-style: italic;
-  line-height: 20px;
-}
-
-@keyframes soon2 {
-  0%{
-    transform: scale(1.0);
-  } 
-  50%{
-    transform: scale(1.03);
-  }
-  100%{
-    transform: scale(1.0);
-    translate: none;
-  }
-}
-
-.soon:hover{
-  cursor: pointer;
-  animation: soon2 1s ease-in-out;
-  animation-fill-mode:initial ;
 }
 
 .side-bar{
@@ -130,12 +113,13 @@ h3::first-letter{
   max-width: 50px;
   margin: 20% auto 20%;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-items img:hover, .menu-items img:active {
   right: 10px;
-  transform: translateX(-30%) scale(1.5);
-  transition: right 2s, transform 0.3s ease-in-out;
+  transform: translateX(-10%) scale(1.2);
+  transition: right 2s, transform 0.3s ease-in-out;  
 }
 
 .menu-items {
@@ -143,7 +127,7 @@ h3::first-letter{
   text-align: center;
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);  
 }
 
 .pickaxe{
@@ -194,38 +178,7 @@ h3::first-letter{
 
 .text-clicking{
   position: flex;
-  margin-left: 10%;
-}
-
-.particles {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  left: 90px;
-  top: 20px;
-
-  background: white;
-  border-radius: 50%;  
-
-  animation:  2s infinite;
-  animation-delay: 450ms;
-}
-
-@keyframes blast {
-  0%{    
-    transform: translateX(0%) translateY(100%);
-    opacity: 0;
-  }
-  5%{
-    opacity: 1;
-  }  
-  95%{
-    opacity: 1;
-  }
-  100%{
-    transform: translateX(100%) translateY(-100%);
-    opacity: 0;
-  }
+  margin-left: 15%;
 }
 
 .wrapper {
@@ -241,6 +194,7 @@ h3::first-letter{
   left: 10%; 
   flex-direction: row;
   justify-content: space-evenly;  
+  visibility: hidden;
 }
 
 .samples>div>div, .samples>div>div:hover {
@@ -321,102 +275,3 @@ h3::first-letter{
 	width: 100%;
 	left: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.center {
-    margin: auto;
-    width: 60%;
-    border: 5px solid black;
-    padding: 10px;
-    text-align: center;
-    }
-
-.container {
-    display: flex;
-    max-width: 1000px;
-  }
-  
-  .item {
-    height: 200px;
-    width: 100px; /* A fixed width as the default */
-  }
-  
-  .item-center { 
-    flex-grow: 3; /* Set the middle element to grow and stretch */
-    text-align: center;
-  }
-  
-  .item + .item { 
-    margin-left: 2%; 
-  }
-
-  .container-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1000px;
-  }
-  
-  .item-grid {
-    text-align: center;
-    width: 32%;
-    padding-bottom: 18%; /* 32:18, i.e. 16:9 */
-    margin-bottom: 2%; /* (100-32*3)/2 */
-  }
-
-  .imagem {
-    background-color: gray;
-    max-width: 200px;
-    border-radius: 20%;
-    margin-left: 50%;
-    margin-right: 50%;
-  }
-
-  .titulo{
-      font-size: 30px;
-  }
-
-  .subtitulo{
-      font-size: 18px;
-      margin-bottom: 3%;
-  }
-
-  .sinopse{
-    font-size: 24px;
-  }
-
-  .sinopse-text{
-    font-size: 18px;
-  }
-
-  .page{
-      max-width: 700px;
-  }
-
-  .parent {
-        background: #CCCCCC;
-        height: 200px;
-        width: 200px;
-        position: relative;
-    }
-    .child {
-        background: #FFFF00;
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: -35px 0 0 -35px;
-    }

@@ -1,19 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-
-function HomeOld() {
-    return (<div>
-        <h1>Olá, mundo!</h1>
-        <h2>
-            <Link href="/sobre">
-                <a>Acessar Sobre</a>
-            </Link>
-        </h2>
-
-        <Counter />
-    </div>);
-}
 
 function Counter() {
     // Declarar uma nova variável de state, na qual chamaremos de "count"
@@ -38,7 +24,6 @@ function Counter() {
 export default function Home(props) {
     const [pickaxe, setPickaxe] = useState("/wooden_pickaxe.png");
     const [blockMining, setBlockMining] = useState("/cobblestone.png");
-
     const [clickCount, setClickCount] = useState(0);
 
     function showClickingText() {
@@ -47,14 +32,6 @@ export default function Home(props) {
         } else if (clickCount > 0) {
             return `Você clicou ${clickCount} vezes.`;
         }
-    }
-
-    function changeBackground(e) {
-        e.target.style.background = 'red';
-    }
-
-    function changeBackground2(e) {
-        e.target.style.background = 'blue';
     }
 
     return (
@@ -112,9 +89,6 @@ export default function Home(props) {
                     </div>
                 </div>
             </body>
-            <script>
-
-            </script>
         </>
     )
 };
