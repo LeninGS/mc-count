@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Counter() {
     // Declarar uma nova variável de state, na qual chamaremos de "count"
@@ -83,7 +84,13 @@ export default function Home(props) {
                         <div class="menu-items">
                             <img src="/chest.gif"></img>
                             <img src="/diamond.png" onClick={() => { setPickaxe("/diamond_pickaxe.png"); setBlockMining("/obsidian_block.png") }}></img>
-                            <img src="/gold_ingot.png" onClick={() => { setPickaxe("/golden_pickaxe.png"); setBlockMining("/lapis_lazuli_ore.png") }}></img>
+                            <Image
+                                src="/gold_ingot.png"
+                                width="50px"
+                                height="50px"
+                            >
+                                {/* <img src="/gold_ingot.png" onClick={() => { setPickaxe("/golden_pickaxe.png"); setBlockMining("/lapis_lazuli_ore.png") }}></img> */}
+                            </Image>
                             <img src="/iron_ingot.png" onClick={() => { setPickaxe("/iron_pickaxe.png"); setBlockMining("/redstone_ore.png") }}></img>
                         </div>
                     </div>
