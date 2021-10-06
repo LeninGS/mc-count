@@ -1,5 +1,5 @@
 import '../styles.css'
-import { GlobalStyle } from '../GlobalStyle';
+import { GlobalStyle } from './Components/GlobalStyle';
 import Home from '.';
 
 // This default export is required in a new `pages/_app.js` file.
