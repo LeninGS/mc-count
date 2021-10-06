@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Hero, Navbar, Content, Samples, SideBar } from './Components/styled';
+import { Hero, Navbar, Content, Samples, SideBar } from '../Components/styled';
 
 function Counter() {
     // Declarar uma nova variável de state, na qual chamaremos de "count"
