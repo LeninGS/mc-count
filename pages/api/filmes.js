@@ -20,13 +20,15 @@ async function Filme(request, response) {
 
     const movieRuntime = movieResponseJson.runtime;
     const movieOverview = movieResponseJson.overview;
-    const mineItems = fetch('https://minecraft-ids.grahamedgecombe.com/items.json')
-    const mineItemsJson = mineItems;
+    const mineItems = await fetch('https://minecraft-ids.grahamedgecombe.com/items.json');
+    const mineItemsJson = await mineItems.json();
+
+    console.log(mineItemsJson);
 
     response.setHeader('Cache-Control', 's-maxage=1, stale-while-revalidate');
 
     response.json({
-        items: mineItems,
+        items: mineItemsJson,
         date: dynamicDate.toGMTString(),
         movieId: movieID,
         title: movieTitle,

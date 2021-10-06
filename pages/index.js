@@ -1,95 +1,36 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { Container, Form, Nav, Navbar, NavDropdown, Stack, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Counter() {
-    // Declarar uma nova variável de state, na qual chamaremos de "count"
-    const [count, setCount] = useState(1);
-
-    function adicionarContador() {
-        setCount(count + 1);
-    }
-
-    return (
-        <div>
-            <p>
-                Você clicou {count} vezes.
-            </p>
-            <button onClick={adicionarContador}>
-                Clique aqui
-            </button>
-        </div>
-    );
-}
-
-export default function Home(props) {
-    const [pickaxe, setPickaxe] = useState("/wooden_pickaxe.png");
-    const [blockMining, setBlockMining] = useState("/cobblestone.png");
-    const [clickCount, setClickCount] = useState(0);
-
-    function showClickingText() {
-        if (clickCount > 0 && clickCount == 1) {
-            return `Você clicou ${clickCount} vez.`;
-        } else if (clickCount > 0) {
-            return `Você clicou ${clickCount} vezes.`;
-        }
-    }
+export default function Home() {
+    const cTheme = "dark";
 
     return (
         <>
-            <body>
-                <div class="hero">
-                    <div class="navbar">
-                        <img src="/Set_your_amount.gif" class="logo" name="logo"></img>
-                        <Link href="/">
-                            <button type="button" class="button" name="home">Home</button>
-                        </Link>
-                        <button type="button" class="button" name="about">About</button>
-                    </div>
-                    <div class='wrapper'>
-                        <div class="content">
-                            <small>Welcome to</small>
-                            <h1>Mine Count</h1>
-                            <span>
-                                <h3>Coming soon</h3>
-                            </span>
-                            <div class="mining">
-                                <span class="cobblestone">
-                                    <img src={blockMining} onClick={() => setClickCount(clickCount + 1)}></img>
-                                </span>
-                                <span class="pickaxe">
-                                    <img id="pickaxe" src={pickaxe}></img>
-                                </span>
-                                <span class='text-clicking'>
-                                    {showClickingText()}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="samples">
-                            <div>
-                                <img src="/Set_your_amount.gif"></img>
-                                <div>1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod massa ac arcu tempor vehicula. Donec efficitur pulvinar ipsum, ut auctor enim feugiat sit amet. Duis ut turpis at erat dignissim feugiat a eu ipsum. Nulla elementum, tellus et pretium egestas, risus est posuere enim, sit amet faucibus tellus augue eget risus.</div>
-                            </div>
-                            <div>
-                                <img src="/Set_your_amount.gif"></img>
-                                <div>2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod massa ac arcu tempor vehicula. Donec efficitur pulvinar ipsum, ut auctor enim feugiat sit amet. Duis ut turpis at erat dignissim feugiat a eu ipsum. Nulla elementum, tellus et pretium egestas, risus est posuere enim, sit amet faucibus tellus augue eget risus.</div>
-                            </div>
-                            <div>
-                                <img src="/Set_your_amount.gif"></img>
-                                <div>3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod massa ac arcu tempor vehicula. Donec efficitur pulvinar ipsum, ut auctor enim feugiat sit amet. Duis ut turpis at erat dignissim feugiat a eu ipsum. Nulla elementum, tellus et pretium egestas, risus est posuere enim, sit amet faucibus tellus augue eget risus.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="side-bar">
-                        <div class="menu-items">
-                            <img src="/chest.gif"></img>
-                            <img src="/diamond.png" onClick={() => { setPickaxe("/diamond_pickaxe.png"); setBlockMining("/obsidian_block.png") }}></img>
-                            <img src="/gold_ingot.png" onClick={() => { setPickaxe("/golden_pickaxe.png"); setBlockMining("/lapis_lazuli_ore.png") }}></img>
-                            <img src="/iron_ingot.png" onClick={() => { setPickaxe("/iron_pickaxe.png"); setBlockMining("/redstone_ore.png") }}></img>
-                        </div>
-                    </div>
-                </div>
-            </body>
+            <Navbar bg={cTheme} variant={cTheme} expand="lg">
+                <Container>
+                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#link">Link</Nav.Link>
+                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            <Stack direction="horizontal" gap={3}>
+                <Form.Control className="me-auto" placeholder="Add your item here..." />
+                <Button variant="secondary">Submit</Button>
+                <div className="vr" />
+                <Button variant="outline-danger">Reset</Button>
+            </Stack>
         </>
     )
 };
