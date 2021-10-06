@@ -35,10 +35,6 @@ body{
   transition: transform 0.2s ease-in-out;
 }
 
-.content{
-
-}
-
 h1{
   font-size: 70px;
   margin: 10px 0 30px;
